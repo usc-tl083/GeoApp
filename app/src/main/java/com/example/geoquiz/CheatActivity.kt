@@ -30,8 +30,9 @@ class CheatActivity : AppCompatActivity() {
         answerIsTrue = intent.getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false)
 
         binding.showAnswerButton.setOnClickListener {
-            showAnswer()
             cheatViewModel.cheatStatus = true
+            showAnswer()
+            setAnswerShownResult(cheatViewModel.cheatStatus)
         }
         if (cheatViewModel.cheatStatus == true){
             showAnswer()
