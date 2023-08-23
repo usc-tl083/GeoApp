@@ -32,12 +32,10 @@ class CheatActivity : AppCompatActivity() {
         binding.showAnswerButton.setOnClickListener {
             cheatViewModel.cheatStatus = true
             showAnswer()
-            setAnswerShownResult(cheatViewModel.cheatStatus)
         }
         if (cheatViewModel.cheatStatus == true){
             showAnswer()
         }
-        setAnswerShownResult(cheatViewModel.cheatStatus)
     }
 
     private fun setAnswerShownResult(isAnswerShown: Boolean){
@@ -58,6 +56,7 @@ class CheatActivity : AppCompatActivity() {
             else -> R.string.false_button
         }
         binding.answerTextView.setText(answerText)
+        setAnswerShownResult(cheatViewModel.cheatStatus)
     }
 
     companion object {
